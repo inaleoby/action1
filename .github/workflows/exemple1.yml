@@ -1,0 +1,17 @@
+name: exemple1
+
+on: push
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dire Bonjour
+              run: echo 'Bonjour les AMIS'
+
+            - name: Lister les fichiers
+              run: ls
+
+            - name: Lire le fchier
+              run: cat README.md
+    
