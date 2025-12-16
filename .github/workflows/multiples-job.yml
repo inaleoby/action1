@@ -18,6 +18,7 @@ jobs:
             with:
                 name: dragon-test-file
                 path: dragon.txt
+
           - name: Affichier le contenu
             run: ls -latr
 
@@ -31,6 +32,9 @@ jobs:
            uses: actions/download-artifact@v7
            with:
             name: dragon-test-file
+        
+         - name: Affichier le contenu
+           run: ls -latr
 
          - name: Test File exists
            run: grep -i "dragon" dragon.txt
