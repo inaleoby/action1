@@ -1,0 +1,33 @@
+name: working with step level var
+
+on:
+    push
+
+env: 
+    CONTAINER_REGISTRY: docker.io
+    IAMGE_NAME: github-actions-nginx
+    DOCKER_USERNAME: siddharth1
+    DOCKER_PASSWORD: s3cUrePassw0rd
+
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+         - name: Docker Build 
+           run:  echo docker build -t ${{env.CONTAINER_REGISTRY}}/$DOCKER_USERNAME/$IAMGE_NAME:latest
+
+         - name: Docker login
+           run:  echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
+        
+         - name: Docker Publih
+           run:  echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+         - name: Docker Run
+           run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+
+      
+    
+
