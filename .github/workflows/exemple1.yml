@@ -9,11 +9,15 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v6
             - name: Dire Bonjour
-              run: echo 'Bonjour les AMIS'
+              run: |
+                echo 'Bonjour les AMIS'
+                ls -altr
+                cat README.md
 
-            - name: Lister les fichiers
-              run: ls
+            
+#          - name: Lister les fichiers
+#             run: ls
 
-            - name: Lire le fchier
-              run: cat README.md
+ #           - name: Lire le fchier
+  #            run: cat README.md
     
