@@ -6,6 +6,8 @@ jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v6
             - name: Dire Bonjour
               run: echo 'Bonjour les AMIS'
 
