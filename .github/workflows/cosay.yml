@@ -9,6 +9,9 @@ jobs:
         steps:
           - name: Checkout Repo 
             uses: actions/checkout@v5
+          
+          - name: Lister les fichiers avant
+            run: ls -latr
 
           - name: Script execution ASCI
             run: ./asci.sh
