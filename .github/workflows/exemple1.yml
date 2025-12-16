@@ -14,6 +14,8 @@ jobs:
                 ls -altr
                 cat README.md
 
+            - name: Generner ASCI 
+              run: cowsat -f dragon "Run for cover" >> dragon.txt
             
 #          - name: Lister les fichiers
 #             run: ls
