@@ -11,10 +11,10 @@ jobs:
             uses: actions/checkout@v5
 
           - name: Install 
-            run: sudo apt get install cowasy -y
+            run: sudo apt get install cowsay -y
 
           - name: Execute cowsay CMD
-            run: cowsat -f dragon "Run for cover, I'am a DRAGON.." >> dragon.txt
+            run: cowsay -f dragon "Run for cover, I'am a DRAGON.." >> dragon.txt
 
           - name: Test File
             run: grep -i "dragon" dragon.txt
