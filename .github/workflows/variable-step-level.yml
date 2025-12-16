@@ -13,21 +13,21 @@ jobs:
             DOCKER_USERNAME: siddharth1
             IAMGE_NAME: github-actions-nginx
             
-           run:  docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+           run:  echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
          - name: Docker login
            env: 
             DOCKER_USERNAME: siddharth1
             DOCKER_PASSWORD: s3cUrePassw0rd
             
-           run:  docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
+           run:  echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
         
          - name: Docker Publish
            env: 
                 CONTAINER_REGISTRY: docker.io
                 DOCKER_USERNAME: siddharth1
                 IAMGE_NAME: github-actions-nginx
-           run:  docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+           run:  echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
     deploy:
         runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
                 CONTAINER_REGISTRY: docker.io
                 DOCKER_USERNAME: siddharth1
                 IAMGE_NAME: github-actions-nginx
-           run:  docker  run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+           run: echo docker  run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
       
     
