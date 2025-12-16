@@ -13,7 +13,7 @@ jobs:
             DOCKER_USERNAME: siddharth1
             IAMGE_NAME: github-actions-nginx
             
-           run:  echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+           run:  echo docker build -t ${{env.CONTAINER_REGISTRY}}/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
          - name: Docker login
            env: 
@@ -37,7 +37,7 @@ jobs:
                 CONTAINER_REGISTRY: docker.io
                 DOCKER_USERNAME: siddharth1
                 IAMGE_NAME: github-actions-nginx
-           run: echo docker  run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
+           run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
       
     
