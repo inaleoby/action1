@@ -23,6 +23,7 @@ jobs:
            run:  echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
     deploy:
+        needs: docker
         runs-on: ubuntu-latest
         steps:
          - name: Docker Run
