@@ -14,7 +14,9 @@ jobs:
             run: ls -latr
 
           - name: Script execution ASCI
-            run: ./espoir.sh
+            run: |
+             chmod +x espoir.sh
+             ./espoir.sh
 
 
 
