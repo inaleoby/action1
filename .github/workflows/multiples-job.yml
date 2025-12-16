@@ -19,7 +19,7 @@ jobs:
             uses: actions/upload-artifact@v6
             with:
                 name: dragon-test-file
-                path: dist/dragon.txt
+                path: dist/
 
           - name: Affichier le contenu
             run: ls -latr
