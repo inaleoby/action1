@@ -10,9 +10,9 @@ jobs:
           - name: Checkout Repo 
             uses: actions/checkout@v5
 
-          - name: Script execution
+          - name: Script execution ASCI
             run: ./asci.sh
-            
+
 
 
 
