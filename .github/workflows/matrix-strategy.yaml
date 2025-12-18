@@ -7,9 +7,13 @@ on:
 jobs:
     Job1:
         strategy:
+            fail-fast: false
             matrix:
                 os: [ubuntu-latest, windows-latset] 
                 images: [hello-world, alpine]
+                exclude:
+                    - images : alpine
+                      os: windows-latset
 
         runs-on: ${{ matrix.os }}
         steps:
