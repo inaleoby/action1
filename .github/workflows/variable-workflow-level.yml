@@ -27,13 +27,14 @@ jobs:
            run:  echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
     deploy:
-        concurrency: 
-          group: Placment
-          cancel-in-progress: true
+        # concurrency: 
+        #   group: Placment
+        #   cancel-in-progress: true
         needs: docker
         runs-on: ubuntu-latest
         steps:
          - name: Docker Runrun
+           timeout-minutes: 1
            run: |
              echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
              sleep 6000
