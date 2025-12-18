@@ -33,7 +33,7 @@ jobs:
         needs: docker
         runs-on: ubuntu-latest
         steps:
-         - name: Docker Run
+         - name: Docker Runrun
            run: |
              echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
              sleep 6000
