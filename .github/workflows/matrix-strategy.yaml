@@ -1,0 +1,21 @@
+name: MATRIX STRATEGY
+
+
+on:
+    push
+
+jobs:
+    Job1:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latset] 
+                images: [hello-world, alpine]
+
+        runs-on: ${{ matrix.os }}
+        steps:
+            - name: Version
+              run: docker info 
+            
+
+            - name: Run images
+              run: docker run ${{ matrix.images }}
