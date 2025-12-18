@@ -1,4 +1,4 @@
-name: WORKFLOW LEVEL
+name: TRIGGERS
 
 on:
     push
