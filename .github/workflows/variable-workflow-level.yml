@@ -27,6 +27,7 @@ jobs:
            run:  echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
 
     deploy:
+        if: ${{github.ref == 'refs/heads/main'}}
         # concurrency: 
         #   group: Placment
         #   cancel-in-progress: true
