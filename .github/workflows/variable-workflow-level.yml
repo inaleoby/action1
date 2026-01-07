@@ -38,7 +38,7 @@ jobs:
            timeout-minutes: 1
            run: |
              echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IAMGE_NAME:latest
-             sleep 6000
+             sleep 60
 
       
     
