@@ -14,7 +14,7 @@ jobs:
                 exclude:
                     - images : alpine
                       os: windows-latset
-
+                        
         runs-on: ${{ matrix.os }}
         steps:
             - name: Version
